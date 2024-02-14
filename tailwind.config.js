@@ -8,6 +8,10 @@ export default {
     fontFamily: {
       'main': ['Prompt', 'sans-serif']
     },
+    colors: {
+      'hover': '#e5e7eb',
+      'white': 'white'
+    },
     extend: {},
   },
   plugins: [],

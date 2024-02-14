@@ -1,11 +1,14 @@
-import Router from './router'
+import Layout from './router'
+import {BrowserRouter as Router } from 'react-router-dom'
 
 import './App.css'
 
 function App() {
 
   return (
-    <Router />
+    <Router>
+      <Layout />
+    </Router> 
   )
 }
 

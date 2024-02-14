@@ -3,44 +3,23 @@ import Home from './pages/Home'
 import Product from './pages/Products'
 import Header from './components/header/Header'
 import { 
-    createBrowserRouter, 
-    RouterProvider, 
-    Outlet,
+    Route,
+    Routes,
     } from 'react-router-dom'
 
 
-    const Router = () => {
-        const Layout = () => {
-        return (
-            <div className='w-screen h-screen font-main'>
-                <Header />
-                <Outlet />
-            </div>
-        )
-        }
+const Layout = () => {
 
-    const router = createBrowserRouter([
-        {
-        path: "/",
-        element: <Layout />,
-        children: [
-            {
-            path: "/",
-            element: <Home />,
-            },
-            {
-            path: "products",
-            element: <Product />,
-            },
-            {
-            path: "cart",
-            element: <Cart />,
-            }
-        ]
-        }
-    ])
+    return (
+        <div className='w-screen h-screen font-main'>
+            <Header />
+            <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='/store' element={<Product />} />
+                <Route path='/cart' element={<Cart />} />
+            </Routes>
+        </div>
+    )
+}
 
-    return <RouterProvider router={router} />
-    }
-
-    export default Router
+export default Layout
