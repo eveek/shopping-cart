@@ -10,7 +10,8 @@ export default {
     },
     colors: {
       'hover': '#e5e7eb',
-      'white': 'white'
+      'white': 'white',
+      'black': 'black'
     },
     extend: {},
   },

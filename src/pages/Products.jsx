@@ -3,7 +3,7 @@ import ItemList from "../components/ItemList"
 
 const Product = () => {
     const [productList, setProductList] = useState(null)
-    const [category, setCategory] = useState("men")
+    const [category, setCategory] = useState("all")
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(true)
 
@@ -17,7 +17,7 @@ const Product = () => {
             }
         })
         .then(response => {
-            console.log(response)
+            // console.log(response)
             setProductList(response)
         })
         .catch(error => setError(error))
@@ -30,10 +30,11 @@ const Product = () => {
 
     return (
         <div>
-            <div>
-                <label htmlFor="category" className="flex">
-                    <h3>Category: </h3>
+            <div className="mb-5">
+                <label htmlFor="category" className="flex items-center">
+                    <h3 className="font-bold pr-2">Category: </h3>
                     <select 
+                    className="border-2 border-collapse"
                     name="category" 
                     value={category} 
                     onChange={e => setCategory(e.target.value)}>

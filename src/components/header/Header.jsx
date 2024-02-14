@@ -23,7 +23,7 @@ const Header = () => {
         setLocation(location.pathname)
     }, [location.pathname])
     
-    console.log(curLocation)
+    // console.log(curLocation)
     const toggleMenu = () => {
         setMenu(!menu)
     }
@@ -34,7 +34,7 @@ const Header = () => {
     }
 
     return (
-        <header className="w-full h-[70px] flex items-center justify-between py-[10px] px-[20px] text-lg font-medium border-solid border-b-hover border-b-2">
+        <header className="fixed top-0 w-full h-[70px] bg-white flex items-center justify-between py-[10px] px-[20px] text-lg font-medium border-solid border-b-hover border-b-2">
             <div className="font-bold text-xl">
                 <FontAwesomeIcon icon={faBagShopping} /> ShopFlex
             </div>

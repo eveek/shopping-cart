@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState, useEffect} from 'react';
+import Item from './item/Item';
 
 
 const ItemList = ({category, productList}) => {
@@ -29,13 +30,17 @@ const ItemList = ({category, productList}) => {
 
 
     return (
-        <div>
+        <article className='flex gap-5 flex-col xl:grid xl:grid-cols-2'>
             {
-                list.map(( li, index) => {
-                    return <h2 key={index}>{li.title}</h2>
+                list.map(li => {
+                    return (
+                        <div key={li.id}>
+                            <Item item={li} />
+                        </div>
+                    )
                 })
             }
-        </div>
+        </article>
     )
 }
 

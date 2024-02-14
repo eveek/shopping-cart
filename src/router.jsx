@@ -13,11 +13,13 @@ const Layout = () => {
     return (
         <div className='w-screen h-screen font-main'>
             <Header />
-            <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='/store' element={<Product />} />
-                <Route path='/cart' element={<Cart />} />
-            </Routes>
+            <div className='px-[20px] pb-[30px] mt-[80px]'>
+                <Routes>
+                    <Route path='/' element={<Home />} />
+                    <Route path='/store' element={<Product />} />
+                    <Route path='/cart' element={<Cart />} />
+                </Routes>
+            </div>
         </div>
     )
 }
