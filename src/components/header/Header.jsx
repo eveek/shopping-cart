@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import { Link, useLocation } from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import NavLink from "../navLink"
@@ -9,12 +9,14 @@ import {
     faStore 
 } from '@fortawesome/free-solid-svg-icons'
 import './header.css'
+import { ShopContext } from "../../App"
 
 
 
 
 
 const Header = () => {
+    const {cartItems} = useContext(ShopContext)
     const location = useLocation()
     const [ menu, setMenu ] = useState(false)
     const [curLocation, setLocation] = useState(location.pathname)
@@ -34,14 +36,14 @@ const Header = () => {
     }
 
     return (
-        <header className="fixed top-0 w-full h-[70px] bg-white flex items-center justify-between py-[10px] px-[20px] text-lg font-medium border-solid border-b-hover border-b-2">
+        <header className=" fixed top-0 w-full h-[70px] bg-white flex items-center justify-between py-[10px] px-[20px] text-lg font-medium border-solid border-b-hover border-b-2">
             <div className="font-bold text-xl">
                 <FontAwesomeIcon icon={faBagShopping} /> ShopFlex
             </div>
             <div className="flex gap-[30px] items-center">
                 <nav>
                     <ul className="flex gap-[30px] items-center">
-                        <div className={`flex-row h-full z-50 bg-white w-[70vw] top-0 transition-right gap-1 ease-in-out duration-300 absolute p-[30px] 
+                        <div className={`flex-row bottom-[-100vh] z-50 bg-white w-[70vw] top-0 transition-right gap-1 ease-in-out duration-300 absolute p-[30px] 
                         min-[425px]:static min-[425px]:flex min-[425px]:bg-transparent min-[425px]:w-fit min-[425px]:p-0 ${menu?"right-0 inset-x-0":"right-[-70vw] inset-x-[-70vw] min-[425px]:justify-start"}`}>
                             <div className="font-bold text-xl min-[425px]:hidden flex gap-1 items-center mb-[30px]">
                                 <FontAwesomeIcon icon={faBagShopping} /> ShopFlex
@@ -65,10 +67,11 @@ const Header = () => {
                                 />
                             </li>
                         </div>
-                        <li>
+                        <li className="relative">
                             <Link to="/cart" className={`hover:bg-hover p-[10px] py-[5px] rounded-[12px] ${curLocation=="/cart"?'bg-hover':''}`}>
                                 <FontAwesomeIcon icon={faCartShopping} />
                             </Link>
+                            <span className={`text-[.625rem] font-bold absolute top-[-10px] right-[-10px] bg-black text-white p-[4px] px-[7px] w-fit leading-[1.1] rounded-[50%] border-white border-2 ${!cartItems.length?"hidden":""}`}>{cartItems.length}</span>
                         </li>
                     </ul>
                 </nav>
@@ -80,7 +83,7 @@ const Header = () => {
                     </div>
                 </button>
             </div>
-            <div className={`absolute top-0 left-0 bottom-0 right-0 bg-hover ${!menu?"hidden":""}`} onClick={toggleMenu}></div>
+            <div className={`absolute top-0 left-0 bottom-[-100vh] right-0 bg-hover ${!menu?"hidden":""}`} onClick={toggleMenu}></div>
         </header>
     )
 }

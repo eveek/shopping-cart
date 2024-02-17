@@ -1,7 +1,10 @@
 import './item.css'
+import { ShopContext } from '../../App'
+import { useContext } from 'react'
 
 
 const Item = ({item}) => {
+    const {addToCart} = useContext(ShopContext)
 
     return (
         <section className="bg-hover h-[500px] w-full flex flex-col border-2 min-[470px]:flex-row min-[470px]:h-[300px] md:h-[230px]" >
@@ -19,7 +22,7 @@ const Item = ({item}) => {
                 <div>
                     <div></div>
                     <div className='w-full'>
-                        <button className='p-2 w-full border-black border-2'>Add to cart</button>
+                        <button className='p-2 w-full border-black border-2 hover:bg-black hover:text-white' onClick={() => addToCart(item.id)}>Add to cart</button>
                     </div>
                 </div>
             </div>

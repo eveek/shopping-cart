@@ -1,28 +1,10 @@
-import { useState, useEffect } from "react"
+import { useState, useContext } from "react"
 import ItemList from "../components/ItemList"
+import { ShopContext } from "../App"
 
 const Product = () => {
-    const [productList, setProductList] = useState(null)
     const [category, setCategory] = useState("all")
-    const [error, setError] = useState(null)
-    const [loading, setLoading] = useState(true)
-
-    useEffect(() => {
-        fetch("https://fakestoreapi.com/products", {mode: "cors"})
-        .then(response => {
-            if (response.status >= 400) {
-                throw new Error("Server error")
-            } else {
-                return response.json()
-            }
-        })
-        .then(response => {
-            // console.log(response)
-            setProductList(response)
-        })
-        .catch(error => setError(error))
-        .finally(() => setLoading(false))
-    },[])
+    const {productList, error, loading} = useContext(ShopContext)
 
 
     if (error) return <p>Unable to load items</p>;
