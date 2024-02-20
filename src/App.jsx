@@ -21,6 +21,8 @@ function App() {
   }
   
   const addToCart = productId => {
+    const checkInclude = cartItems.find(item => item.id == productId)
+    if (checkInclude) return
     const product = productList.find((item) => item.id == productId)
     product.qty = 1
     const newCart = [product, ...cartItems]

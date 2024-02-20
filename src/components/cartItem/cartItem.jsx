@@ -15,8 +15,8 @@ const CartItem = (item) => {
             </div>
             <div className="basis-1/2 p-3 flex flex-col justify-between md:basis-2/3">
                 <div className="flex w-full justify-between gap-3 min-[470px]:flex-col min-[470px]:text-left">
-                    <div className='text-left font-bold'><h3>{item.item.title}</h3></div>
-                    <div><p>${item.item.price} </p></div>
+                    <div className='text-left text-lg'><h3>{item.item.title}</h3></div>
+                    <div><p><strong>${item.item.price} </strong></p></div>
                 </div>
                 <div className="text-sm w-full flex border-black border-2 justify-between">
                     <span>
@@ -35,7 +35,7 @@ const CartItem = (item) => {
                 <div>
                     <div></div>
                     <div className='w-full'>
-                        <button className='p-2 w-full border-black border-2 hover:bg-black hover:text-white' onClick={() => deleteFromCart(item.item.id)}>Delete</button>
+                        <button className='p-2 w-full border-black border-2 hover:bg-black hover:text-white' onClick={() => deleteFromCart(item.item.id)}>Remove</button>
                     </div>
                 </div>
             </div>

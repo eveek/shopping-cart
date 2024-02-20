@@ -13,8 +13,8 @@ const Item = ({item}) => {
             </div>
             <div className="basis-1/2 p-3 flex flex-col justify-between md:basis-2/3">
                 <div className="flex w-full justify-between gap-3 min-[470px]:flex-col min-[470px]:text-left">
-                    <div className='text-left font-bold'><h3>{item.title}</h3></div>
-                    <div><p>${item.price} </p></div>
+                    <div className='text-left text-lg'><h3>{item.title}</h3></div>
+                    <div><p><strong>${item.price} </strong></p></div>
                 </div>
                 <div className="lineClamp text-sm">
                     <p>{item.description}</p>
