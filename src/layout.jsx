@@ -11,9 +11,9 @@ import {
 const Layout = () => {
 
     return (
-        <div className='w-screen h-screen font-main'>
+        <div className='w-screen h-screen font-main bg-hover'>
             <Header />
-            <div className='px-[20px] pb-[30px] mt-[80px] min-[900px]:px-[40px]'>
+            <div className='mt-[60px] h-full'>
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/store' element={<Product />} />

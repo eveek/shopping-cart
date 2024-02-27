@@ -16,8 +16,8 @@
 }
 
 #inMenu {
-    width: 20px;
-    height: 15px;
+    width: 30px;
+    height: 25px;
     position: relative;
     
 }
@@ -25,9 +25,9 @@
 #menu span {
     display: block;
     position: absolute;
-    height: 3px;
+    height: 5px;
     width: 100%;
-    background: black;
+    background: gray;
     border-radius: 9px;
     opacity: 1;
     left: 0;
@@ -46,11 +46,11 @@
 }
 
 #menu span:nth-child(2) {
-    top: 5.5px;
+    top: 8px;
 }
 
 #menu span:nth-child(3) {
-    top: 11px;
+    top: 16px;
 }
 
 #menu.open span:nth-child(1) {

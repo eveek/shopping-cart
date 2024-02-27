@@ -5,8 +5,6 @@ import NavLink from "../navLink"
 import { 
     faCartShopping, 
     faBagShopping, 
-    faHouse,
-    faStore 
 } from '@fortawesome/free-solid-svg-icons'
 import './header.css'
 import { ShopContext } from "../../App"
@@ -36,46 +34,55 @@ const Header = () => {
     }
 
     return (
-        <header className=" fixed top-0 w-full h-[70px] bg-white flex items-center justify-between py-[10px] px-[20px] min-[900px]:px-[40px] text-lg font-medium border-solid border-b-hover border-b-2">
-            <div className="font-bold text-xl">
-                <FontAwesomeIcon icon={faBagShopping} /> ShopFlex
+        <header className={`shadow-md fixed z-[100] top-0 w-full h-[70px] bg-hover flex items-center justify-between py-[10px] px-[20px] min-[900px]:px-[40px] text-lg font-medium border-solid ${curLocation=='/'?'shadow-none bg-hover':''}`}>
+            <div className="font-bold text-[25px]">
+                <FontAwesomeIcon icon={faBagShopping}  className="text-blue"/> ShopFlex
             </div>
-            <div className="flex gap-[30px] items-center">
+            <div className="flex gap-[30px] items-center text-grey">
                 <nav>
                     <ul className="flex gap-[30px] items-center">
-                        <div className={`flex-row bottom-[-100vh] z-50 bg-white w-[70vw] top-0 transition-right gap-1 ease-in-out duration-300 absolute p-[30px] 
-                        min-[425px]:static min-[425px]:flex min-[425px]:bg-transparent min-[425px]:w-fit min-[425px]:p-0 ${menu?"right-0 inset-x-0":"right-[-70vw] inset-x-[-70vw] min-[425px]:justify-start"}`}>
-                            <div className="font-bold text-xl min-[425px]:hidden flex gap-1 items-center mb-[30px]">
-                                <FontAwesomeIcon icon={faBagShopping} /> ShopFlex
+                        <div className={`flex-row bottom-[-100vh] z-50 w-[70vw] top-0 transition-right gap-5 ease-in-out duration-300 absolute p-[30px] bg-white
+                        min-[680px]:static min-[680px]:flex min-[680px]:bg-white min-[680px]:w-fit min-[680px]:p-0 ${menu?"right-0 inset-x-0":"right-[-70vw] inset-x-[-70vw] min-[680px]:justify-start"}`}>
+                            <div className="font-bold text-[25px] text-black min-[680px]:hidden flex gap-1 items-center mb-[30px]">
+                                <FontAwesomeIcon icon={faBagShopping} className="text-blue"/> ShopFlex
                             </div>
-                            <li className="mb-[10px] min-[425px]:m-0 flex">
+                            <li className="mb-[10px] min-[680px]:m-0 flex">
                                 <NavLink
                                     curLocation={curLocation}
-                                    icon={faHouse}
                                     onClick={closeMenu}
                                     path={'/'}
                                     element={"Home"}
                                 />
                             </li>
-                            <li className="flex flex-row">
+                            <li className="flex flex-row mb-[10px] min-[680px]:m-0">
                                 <NavLink
                                     curLocation={curLocation}
-                                    icon={faStore}
                                     onClick={closeMenu}
                                     path={'/store'}
                                     element={"Store"}
                                 />
                             </li>
+                            <button className="text-white bg-blue p-[10px] px-5 w-full rounded-[12px] min-[680px]:hidden">Sign in</button>
                         </div>
-                        <li className="relative">
-                            <Link to="/cart" className={`hover:bg-hover p-[10px] py-[5px] rounded-[12px] ${curLocation=="/cart"?'bg-hover':''}`}>
+                    </ul>
+                </nav>
+
+            </div>
+            <div className="flex flex-row items-center">
+                <nav>
+                    <ul className="flex items-center justify-between gap-[30px]">
+                        <li className="relative text-grey">
+                            <Link to="/cart" className={`hover:bg-hover p-3 rounded-[12px] ${curLocation=="/cart"?'text-blue':''}`}>
                                 <FontAwesomeIcon icon={faCartShopping} />
                             </Link>
                             <span className={`text-[.625rem] font-bold absolute top-[-10px] right-[-10px] bg-black text-white p-[4px] px-[7px] w-fit leading-[1.1] rounded-[50%] border-white border-2 ${!cartItems.length?"hidden":""}`}>{cartItems.length}</span>
                         </li>
+                        <li className="hidden min-[680px]:block">
+                            <button className="text-white bg-blue p-[10px] px-5 rounded-[12px]">Sign in</button>
+                        </li>
                     </ul>
                 </nav>
-                <button id="menu" className={`z-[60] min-[425px]:hidden flex  hover:bg-hover p-[10px] rounded-[12px] ${menu?"open":""}`} onClick={toggleMenu}>
+                <button id="menu" className={`z-[60] ml-3 min-[680px]:hidden flex  hover:bg-hover p-3 rounded-[12px] ${menu?"open":""}`} onClick={toggleMenu}>
                     <div id="inMenu" >
                             <span></span>
                             <span></span>
@@ -83,7 +90,7 @@ const Header = () => {
                     </div>
                 </button>
             </div>
-            <div className={`absolute top-0 left-0 bottom-[-100vh] right-0 bg-hover ${!menu?"hidden":""}`} onClick={toggleMenu}></div>
+            <div className={`absolute top-0 left-0 bottom-[-100vh] right-0 min-[680px]:hidden bg-hover ${!menu?"hidden":""}`} onClick={toggleMenu}></div>
         </header>
     )
 }

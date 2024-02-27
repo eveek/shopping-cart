@@ -11,12 +11,12 @@ const Product = () => {
     if (loading) return <p>Loading...</p>;
 
     return (
-        <div>
+        <div className="overflow-scroll px-[20px] pb-[30px] mt-[80px] min-[900px]:px-[40px]">
             <div className="mb-5">
                 <label htmlFor="category" className="flex items-center">
                     <h3 className="font-bold pr-2">Category: </h3>
                     <select 
-                    className="border-2 border-collapse"
+                    className="shadow-md rounded-[10px] border-collapse"
                     name="category" 
                     value={category} 
                     onChange={e => setCategory(e.target.value)}>

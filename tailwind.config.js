@@ -9,9 +9,12 @@ export default {
       'main': ['Prompt', 'sans-serif']
     },
     colors: {
-      'hover': '#e5e7eb',
+      // 'hover': 'rgb(244, 247, 255)',
+      'hover': 'rgb(172, 223, 244)',
       'white': 'white',
-      'black': 'black'
+      'black': 'black',
+      'blue': 'rgb(33, 148, 235)',
+      'grey': 'grey'
     },
     extend: {},
   },
