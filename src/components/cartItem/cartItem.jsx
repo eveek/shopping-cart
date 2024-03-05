@@ -14,25 +14,25 @@ const CartItem = (item) => {
                 {/* <img src={item.image} alt="" /> */}
             </div>
             <div className="basis-1/2 flex flex-col justify-between md:basis-2/3">
-                <div className='text-left text-lg'><h3>{item.item.title}</h3></div>
+                <div className='text-left text-lg text-grey'><h3>{item.item.title}</h3></div>
                 <div className='text-left'><p><strong>${item.item.price} </strong></p></div>
                 <div className='flex flex-col gap-5 min-[768px]:flex-row'>
-                    <div className="text-sm w-full flex border-black border-2 justify-between">
+                    <div className="text-sm w-full flex border-blue border-2 justify-between">
                         <span>
-                            <button className='bg-black text-white font-bold p-2 px-4 h-full' onClick={() => qtyIncreament(item.item.id)}>
+                            <button className='bg-blue text-white font-bold p-2 px-4 h-full hover:bg-blue' onClick={() => qtyIncreament(item.item.id)}>
                                 <FontAwesomeIcon icon={faPlus} />
                             </button>
                         </span>
                         {/* <input type="number" className='w-full text-center' onChange={houh} defaultValue={item.item.qty} /> */}
-                        <span className='w-full text-center text-[20px] leading-[1.8]'>{item.item.qty}</span>
+                        <span className='w-full text-center text-[20px] leading-[1.7] pt-1'>{item.item.qty}</span>
                         <span>
-                            <button className='bg-black text-white font-bold p-2 px-4 h-full' onClick={() => qtyDecreament(item.item.id)}>
+                            <button className='bg-blue text-white font-bold p-2 px-4 h-full' onClick={() => qtyDecreament(item.item.id)}>
                                 <FontAwesomeIcon icon={faMinus} />
                             </button>
                         </span>
                     </div>
                     <div className='w-full'>
-                        <button className='p-2 w-full rounded-[12px] border-black border-2 hover:bg-black hover:text-white' onClick={() => deleteFromCart(item.item.id)}>Remove</button>
+                        <button className='p-2 w-full rounded-[12px] border-blue border-2 hover:bg-blue hover:text-white' onClick={() => deleteFromCart(item.item.id)}>Remove</button>
                     </div>
                 </div>
             </div>

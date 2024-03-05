@@ -11,7 +11,7 @@ import {
 const Layout = () => {
 
     return (
-        <div className='w-screen h-screen font-main bg-hover'>
+        <div className='w-screen h-screen font-main bg-hozer'>
             <Header />
             <div className='mt-[60px] h-full'>
                 <Routes>

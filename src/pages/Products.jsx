@@ -7,16 +7,16 @@ const Product = () => {
     const {productList, error, loading} = useContext(ShopContext)
 
 
-    if (error) return <p>Unable to load items</p>;
-    if (loading) return <p>Loading...</p>;
+    if (error) return <p className="pt-5">Unable to load items</p>;
+    if (loading) return <p className="pt-5">Loading...</p>;
 
     return (
         <div className="overflow-scroll px-[20px] pb-[30px] mt-[80px] min-[900px]:px-[40px]">
             <div className="mb-5">
                 <label htmlFor="category" className="flex items-center">
-                    <h3 className="font-bold pr-2">Category: </h3>
+                    <h3 className="font-bold pr-2 text-blue">Category: </h3>
                     <select 
-                    className="shadow-md rounded-[10px] border-collapse"
+                    className="shadow-md rounded-[10px] p-1 bg-white border-blue border-2"
                     name="category" 
                     value={category} 
                     onChange={e => setCategory(e.target.value)}>

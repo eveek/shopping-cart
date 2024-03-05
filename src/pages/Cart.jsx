@@ -15,10 +15,10 @@ const Cart = () => {
     
     if (cartItems.length == 0) return (
         <>
-            <h2 className="text-xl mb-4 mt-[150px]">Cart is empty</h2>
+            <h2 className="text-xl mb-4 pt-[150px]">Cart is empty</h2>
             <Link to='/store'>
-                <button className="bg-white shadow-md rounded-[12px] p-[10px] font-bold">
-                        Shop now!
+                <button className="bg-blue text-white shadow-md rounded-[12px] p-[10px] font-bold hover:scale-95">
+                        Shop now
                 </button>
             </Link>
 

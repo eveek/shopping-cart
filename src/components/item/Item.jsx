@@ -21,7 +21,7 @@ const Item = ({item}) => {
                 <div>
                     <div></div>
                     <div className='w-full min-[900px]:max-xl:w-fit min-[900px]:max-xl:float-end'>
-                        <button className='p-2 w-full px-4 rounded-[12px] border-black border-2 hover:bg-black hover:text-white' onClick={() => addToCart(item.id)}>Add to cart</button>
+                        <button className='p-2 w-full px-4 rounded-[12px] border-blue border-2 hover:bg-blue hover:text-white' onClick={() => addToCart(item.id)}>Add to cart</button>
                     </div>
                 </div>
             </div>

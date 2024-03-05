@@ -34,7 +34,7 @@ const Header = () => {
     }
 
     return (
-        <header className={`shadow-md fixed z-[100] top-0 w-full h-[70px] bg-hover flex items-center justify-between py-[10px] px-[20px] min-[900px]:px-[40px] text-lg font-medium border-solid ${curLocation=='/'?'shadow-none bg-hover':''}`}>
+        <header className={`fixed z-[100] top-0 w-full h-[70px] bg-hover flex items-center justify-between py-[10px] px-[20px] min-[900px]:px-[40px] text-lg font-medium border-solid`}>
             <div className="font-bold text-[25px]">
                 <FontAwesomeIcon icon={faBagShopping}  className="text-blue"/> ShopFlex
             </div>
@@ -75,7 +75,7 @@ const Header = () => {
                             <Link to="/cart" className={`hover:bg-hover p-3 rounded-[12px] ${curLocation=="/cart"?'text-blue':''}`}>
                                 <FontAwesomeIcon icon={faCartShopping} />
                             </Link>
-                            <span className={`text-[.625rem] font-bold absolute top-[-10px] right-[-10px] bg-black text-white p-[4px] px-[7px] w-fit leading-[1.1] rounded-[50%] border-white border-2 ${!cartItems.length?"hidden":""}`}>{cartItems.length}</span>
+                            <span className={`text-[.625rem] font-bold absolute top-[-10px] right-[-10px] bg-blue text-white p-[4px] px-[7px] w-fit leading-[1.1] rounded-[50%] border-hover border-2 ${!cartItems.length?"hidden":""}`}>{cartItems.length}</span>
                         </li>
                         <li className="hidden min-[680px]:block">
                             <button className="text-white bg-blue p-[10px] px-5 rounded-[12px]">Sign in</button>
